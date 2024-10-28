@@ -1,0 +1,22 @@
+﻿@model WebApplication2.Models.Task
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="TaskName"></label>
+        <input asp-for="TaskName" class="form-control" />
+        <span asp-validation-for="TaskName" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Status"></label>
+        <input asp-for="Status" class="form-control" />
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Create</button>
+</form>
+<script>
+    const form = document.querySelector('form');
+    form.addEventListener('submit', function () {
+        const submitButton = form.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+    });
+</script>
